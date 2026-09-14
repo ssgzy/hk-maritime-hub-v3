@@ -1,0 +1,54 @@
+{
+  "_note": "Approximate public coordinates for research map display only. Not an official chart product; positions may differ from HKO/MD authoritative sources.",
+  "tide": [
+    {"id": "CCH", "name": "Cheung Chau", "name_zh": "长洲", "lon": 114.026, "lat": 22.201},
+    {"id": "CLK", "name": "Chek Lap Kok", "name_zh": "赤鱲角", "lon": 113.922, "lat": 22.315},
+    {"id": "CMW", "name": "Chi Ma Wan", "name_zh": "芝麻湾", "lon": 113.994, "lat": 22.230},
+    {"id": "KCT", "name": "Kwai Chung", "name_zh": "葵涌", "lon": 114.112, "lat": 22.354},
+    {"id": "KLW", "name": "Ko Lau Wan", "name_zh": "高流湾", "lon": 114.361, "lat": 22.459},
+    {"id": "LOP", "name": "Lok On Pai", "name_zh": "乐安排", "lon": 114.073, "lat": 22.372},
+    {"id": "MWC", "name": "Ma Wan", "name_zh": "马湾", "lon": 114.059, "lat": 22.348},
+    {"id": "QUB", "name": "Quarry Bay", "name_zh": "鲗鱼涌", "lon": 114.213, "lat": 22.291},
+    {"id": "SPW", "name": "Shek Pik", "name_zh": "石壁", "lon": 113.895, "lat": 22.230},
+    {"id": "TAO", "name": "Tai O", "name_zh": "大澳", "lon": 113.863, "lat": 22.255},
+    {"id": "TBT", "name": "Tsim Bei Tsui", "name_zh": "尖鼻咀", "lon": 114.008, "lat": 22.487},
+    {"id": "TMW", "name": "Tai Miu Wan", "name_zh": "大庙湾", "lon": 114.289, "lat": 22.270},
+    {"id": "TPK", "name": "Tai Po Kau", "name_zh": "大埔滘", "lon": 114.184, "lat": 22.442},
+    {"id": "WAG", "name": "Waglan Island", "name_zh": "横澜岛", "lon": 114.303, "lat": 22.182}
+  ],
+  "wind": [
+    {"id": "Waglan Island", "name": "Waglan Island", "name_zh": "横澜岛", "lon": 114.303, "lat": 22.182},
+    {"id": "Cheung Chau", "name": "Cheung Chau", "name_zh": "长洲", "lon": 114.026, "lat": 22.201},
+    {"id": "Green Island", "name": "Green Island", "name_zh": "青洲", "lon": 114.111, "lat": 22.285},
+    {"id": "Central Pier", "name": "Central Pier", "name_zh": "中环码头", "lon": 114.160, "lat": 22.287},
+    {"id": "Kai Tak", "name": "Kai Tak", "name_zh": "启德", "lon": 114.213, "lat": 22.309},
+    {"id": "Star Ferry", "name": "Star Ferry", "name_zh": "天星码头", "lon": 114.168, "lat": 22.294},
+    {"id": "Tate's Cairn", "name": "Tate's Cairn", "name_zh": "大老山", "lon": 114.218, "lat": 22.358},
+    {"id": "Tai Mei Tuk", "name": "Tai Mei Tuk", "name_zh": "大美督", "lon": 114.237, "lat": 22.528},
+    {"id": "Sha Tin", "name": "Sha Tin", "name_zh": "沙田", "lon": 114.185, "lat": 22.402},
+    {"id": "Tuen Mun", "name": "Tuen Mun", "name_zh": "屯门", "lon": 113.977, "lat": 22.391},
+    {"id": "Sai Kung", "name": "Sai Kung", "name_zh": "西贡", "lon": 114.276, "lat": 22.382},
+    {"id": "Peng Chau", "name": "Peng Chau", "name_zh": "坪洲", "lon": 114.043, "lat": 22.285},
+    {"id": "Lamma Island", "name": "Lamma Island", "name_zh": "南丫岛", "lon": 114.110, "lat": 22.200},
+    {"id": "Hong Kong International Airport", "name": "Hong Kong International Airport", "name_zh": "香港国际机场", "lon": 113.915, "lat": 22.308},
+    {"id": "King's Park", "name": "King's Park", "name_zh": "京士柏", "lon": 114.173, "lat": 22.312},
+    {"id": "Shell Pier", "name": "Shell Pier", "name_zh": "蚬壳码头", "lon": 114.140, "lat": 22.298}
+  ],
+  "visibility": [
+    {"id": "Central Pier", "name": "Central Pier", "name_zh": "中环码头", "lon": 114.160, "lat": 22.287},
+    {"id": "Waglan Island", "name": "Waglan Island", "name_zh": "横澜岛", "lon": 114.303, "lat": 22.182},
+    {"id": "Cheung Chau", "name": "Cheung Chau", "name_zh": "长洲", "lon": 114.026, "lat": 22.201},
+    {"id": "Hong Kong Observatory", "name": "Hong Kong Observatory", "name_zh": "香港天文台", "lon": 114.174, "lat": 22.302},
+    {"id": "Kai Tak", "name": "Kai Tak", "name_zh": "启德", "lon": 114.213, "lat": 22.309},
+    {"id": "Sai Kung", "name": "Sai Kung", "name_zh": "西贡", "lon": 114.276, "lat": 22.382},
+    {"id": "Tap Mun", "name": "Tap Mun", "name_zh": "塔门", "lon": 114.360, "lat": 22.471},
+    {"id": "Wetland Park", "name": "Wetland Park", "name_zh": "湿地公园", "lon": 114.032, "lat": 22.467}
+  ],
+  "marine": {
+    "id": "marine-default",
+    "name": "South HK waters sample point",
+    "name_zh": "香港南面海域示例点",
+    "lon": 114.20,
+    "lat": 22.10
+  }
+}

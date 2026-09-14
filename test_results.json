@@ -1,0 +1,196 @@
+{
+  "frontend": {
+    "passed": 18,
+    "checks": [
+      "Original 40 directory entries /31 sources/47 SRZ zones retained; 19 connectors registered.",
+      "19 parsers accepted explicitly synthetic fixtures (not live verification).",
+      "CSV unmatched quote",
+      "CSV column mismatch",
+      "XML unknown schema not zero ships",
+      "XML DTD rejected",
+      "JSON error object",
+      "HHOT invalid date",
+      "Marine out of bounds",
+      "Null not zero",
+      "Missing tide",
+      "Empty warning valid",
+      "Browser rendering: data tables, outdated-data notice, model chart with missing-value gaps and source units.",
+      "CANCEL warning explicitly labeled cancelled, not active.",
+      "Failed refresh keeps old successful data only under a visible stale/error message.",
+      "Navigation: catalog, live readers, 23 non-direct cards, 9 tools, SRZ and documentation export controls.",
+      "390px viewport: no horizontal page overflow across all six routes.",
+      "Actual (unmocked) local browser: restricted runtime upstream request failure displayed; no fabricated data or fake success."
+    ],
+    "javascript_errors": [],
+    "parser_fixtures": [
+      {
+        "id": "wind",
+        "ok": true,
+        "tables": 1,
+        "rows": 2
+      },
+      {
+        "id": "visibility",
+        "ok": true,
+        "tables": 1,
+        "rows": 1
+      },
+      {
+        "id": "tide",
+        "ok": true,
+        "tables": 1,
+        "rows": 2
+      },
+      {
+        "id": "rhrread",
+        "ok": true,
+        "tables": 3,
+        "rows": 3
+      },
+      {
+        "id": "warnsum",
+        "ok": true,
+        "tables": 1,
+        "rows": 1
+      },
+      {
+        "id": "warningInfo",
+        "ok": true,
+        "tables": 0,
+        "rows": 0
+      },
+      {
+        "id": "swt",
+        "ok": true,
+        "tables": 0,
+        "rows": 0
+      },
+      {
+        "id": "flw",
+        "ok": true,
+        "tables": 0,
+        "rows": 0
+      },
+      {
+        "id": "fnd",
+        "ok": true,
+        "tables": 1,
+        "rows": 1
+      },
+      {
+        "id": "sccw",
+        "ok": true,
+        "tables": 2,
+        "rows": 2
+      },
+      {
+        "id": "marine",
+        "ok": true,
+        "tables": 1,
+        "rows": 3
+      },
+      {
+        "id": "hhot",
+        "ok": true,
+        "tables": 1,
+        "rows": 1
+      },
+      {
+        "id": "location",
+        "ok": true,
+        "tables": 1,
+        "rows": 1
+      },
+      {
+        "id": "vtms_due",
+        "ok": true,
+        "tables": 1,
+        "rows": 1
+      },
+      {
+        "id": "vtms_intend",
+        "ok": true,
+        "tables": 1,
+        "rows": 1
+      },
+      {
+        "id": "vtms_entered",
+        "ok": true,
+        "tables": 1,
+        "rows": 1
+      },
+      {
+        "id": "vtms_departed",
+        "ok": true,
+        "tables": 1,
+        "rows": 1
+      },
+      {
+        "id": "vtms_inport",
+        "ok": true,
+        "tables": 1,
+        "rows": 1
+      },
+      {
+        "id": "vtms_transit",
+        "ok": true,
+        "tables": 1,
+        "rows": 1
+      }
+    ],
+    "actual_network_result": "请求超时，未获得新数据。",
+    "note": "Synthetic test data was never embedded in production HTML. Public upstream integration remains unverified."
+  },
+  "backend": {
+    "http_checks": [
+      [
+        "/api/health",
+        200
+      ],
+      [
+        "/api/feed/unknown",
+        404
+      ],
+      [
+        "/api/feed/wind?url=https://evil.example/",
+        400
+      ],
+      [
+        "/api/feed/marine?lat=nan",
+        400
+      ],
+      [
+        "/api/feed/hhot?date=2026-02-31",
+        400
+      ],
+      [
+        "/server.py",
+        404
+      ],
+      [
+        "/../../etc/passwd",
+        404
+      ],
+      [
+        "/feeds.json",
+        200
+      ],
+      [
+        "{'Host': 'evil.example'}",
+        403
+      ],
+      [
+        "{'Origin': 'https://evil.example'}",
+        403
+      ],
+      [
+        "{'Sec-Fetch-Site': 'cross-site'}",
+        403
+      ]
+    ],
+    "upstream_attempt": {
+      "http": 502,
+      "body": "{\"ok\": false, \"error\": \"URLError: <urlopen error [Errno -3] Temporary failure in name resolution>\", \"note\": \"No fresh data was obtained. Existing browser results are not replaced.\"}"
+    }
+  }
+}

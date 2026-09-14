@@ -1,0 +1,15 @@
+{
+  "build_date": "2026-09-13",
+  "source_html_sha256": "93679f0e0163283a60a5ee62dc88e68da26999ccb38cfae8f0bf2f9b44ec94a7",
+  "output_html_sha256": "c3f20c22f5c20db77f80d23110e4da34e090a7d02d85a794666d811bebafe316",
+  "directory_entries": 40,
+  "original_urls": 53,
+  "support_urls": 2,
+  "query_connectors": 19,
+  "normal_latest_queries": 17,
+  "conditional_queries": 1,
+  "reference_dictionary_queries": 1,
+  "srz_regions": 47,
+  "upstream_end_to_end_success_verified": false,
+  "tests": "See TEST_REPORT.md. Synthetic fixtures are not shipped as website observations."
+}

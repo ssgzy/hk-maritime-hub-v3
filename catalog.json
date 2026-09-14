@@ -1,0 +1,1134 @@
+[
+  {
+    "id": "HK01",
+    "name": "MSDI 海事空间地图",
+    "provider": "海事处 / 测量处",
+    "category": "spatial",
+    "description": "海事设施；限制进入、限高、限速等水域位置；静态/准静态空间规则；2026-01-28上线",
+    "use": "先查看香港已有的海事地图与设施。",
+    "access": "公开网页；程序化接入优先追踪对应CSDI数据集",
+    "accessLabel": "网页入口",
+    "formats": [
+      "网页"
+    ],
+    "limits": "门户可浏览不等于提供开放原始API；不等于完整授权海图",
+    "urls": [
+      "https://msdi.hydro.gov.hk/",
+      "https://www.hydro.gov.hk/eng/latest_news.php"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "2026-09-13 已核对来源页面；未测试持续数据服务。",
+    "integration": {
+      "mode": "web",
+      "label": "原站网页 / 文档",
+      "reason": "门户网页，尚未核实可稳定复用的原始接口；不强行 iframe 嵌入。",
+      "next": "保留门户入口；从对应 CSDI 数据项获取服务或文件后再接入。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK02",
+    "name": "CSDI / 政府开放数据目录",
+    "provider": "香港政府 / CSDI",
+    "category": "spatial",
+    "description": "香港政府地理数据目录与空间服务；各数据集分别标记版本、范围与更新周期",
+    "use": "查找数据格式、下载链接及元数据。",
+    "access": "数据集详情的GeoSpatial Service；WFS/WMS/ArcGIS等以实际发布为准",
+    "accessLabel": "文件 / 空间服务",
+    "formats": [
+      "空间数据目录"
+    ],
+    "limits": "逐项检查字段、坐标系、调用限制和使用条款；WMS图片不等于可用于计算的矢量",
+    "urls": [
+      "https://portal.csdi.gov.hk/",
+      "https://data.gov.hk/en-datasets/provider/hk-md"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "download",
+      "label": "下载或图层端点待接入",
+      "reason": "目录不是一个数据 API；不同图层使用不同下载或空间服务端点。",
+      "next": "逐项核验 WFS/WMS/ArcGIS URL、图层名、坐标系及授权。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK03",
+    "name": "航道与分道通航区",
+    "provider": "海事处 / 测量处",
+    "category": "spatial",
+    "description": "Traffic Separation Schemes and Principal Fairways；航道/分道通航空间范围；按修订更新",
+    "use": "为航行任务了解航道与空间规则背景。",
+    "access": "DATA.GOV.HK / CSDI空间API目录",
+    "accessLabel": "文件 / 空间服务",
+    "formats": [
+      "空间数据目录"
+    ],
+    "limits": "图层不能单独表达全部航行规则；规则判断需结合最新通告及正式要求",
+    "urls": [
+      "https://data.gov.hk/en-data/dataset/hk-md-hydro-traffic-separation-schemes-and-principal-fairways"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "download",
+      "label": "下载或图层端点待接入",
+      "reason": "可下载空间文件；本轮未取得并验证具体图层服务端点。",
+      "next": "下载 GeoJSON 后加入独立地图预览，或核验公开空间服务。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK04",
+    "name": "香港水域限速区 · SRZ",
+    "provider": "海事处 / 测量处",
+    "category": "spatial",
+    "description": "香港水域限速区域位置及规则说明；本站提供 47 个区域的地图预览。",
+    "use": "展示限速区空间范围与规则摘要。",
+    "access": "DATA.GOV.HK / CSDI空间API目录",
+    "accessLabel": "文件 / 空间服务",
+    "formats": [
+      "SHP / GeoJSON"
+    ],
+    "limits": "上传文件的官方版本日期未提供。中文说明为辅助译文，不能判断当前限制是否生效。Zone B 有几何自交警告，原始几何已保留，未用于空间决策计算。",
+    "urls": [
+      "https://data.gov.hk/en-data/dataset/hk-md-hydro-speed-restricted-zones",
+      "https://portal.csdi.gov.hk/geoportal/?datasetId=mardep_rcd_1730972516934_759"
+    ],
+    "region": "香港",
+    "preview": true,
+    "review": "2026-09-13 已核对来源页面；未测试持续数据服务。",
+    "integration": {
+      "mode": "static",
+      "label": "内嵌静态预览",
+      "reason": "已内嵌 47 个 SRZ 区域；文件发布版本未知，非实时法规校验。",
+      "next": "保留地图、属性表及原文；Zone B 自交问题需在空间计算前复核。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK05",
+    "name": "水域限高区",
+    "provider": "海事处 / 测量处",
+    "category": "spatial",
+    "description": "Height restriction areas in Hong Kong waters；静态空间范围；按修订更新",
+    "use": "了解区域高度限制的来源与范围。",
+    "access": "DATA.GOV.HK / CSDI空间API目录",
+    "accessLabel": "文件 / 空间服务",
+    "formats": [
+      "空间数据目录"
+    ],
+    "limits": "净空计算还涉及高度基准、潮位及船载设备高度；不能只做二维线相交",
+    "urls": [
+      "https://data.gov.hk/en-data/dataset/hk-md-hydro-height-restriction-areas-in-hong-kong-waters"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "download",
+      "label": "下载或图层端点待接入",
+      "reason": "空间文件/服务目录可用，但本版未接入具体数据。",
+      "next": "取得文件或服务端点后独立展示，保留高度单位和适用条件。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK06",
+    "name": "机场进场限制区域",
+    "provider": "海事处 / 测量处",
+    "category": "spatial",
+    "description": "Hong Kong International Airport Approach Areas；限制区域位置；按修订更新",
+    "use": "识别需要特别关注的受限水域。",
+    "access": "DATA.GOV.HK / CSDI空间API目录",
+    "accessLabel": "文件 / 空间服务",
+    "formats": [
+      "空间数据目录"
+    ],
+    "limits": "须按官方现行适用条款判断限制；不以自绘矩形替代官方范围",
+    "urls": [
+      "https://data.gov.hk/en-data/dataset/hk-md-hydro-hong-kong-international-airport-approach-areas"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "download",
+      "label": "下载或图层端点待接入",
+      "reason": "空间文件资料，不是实时飞行/船舶管制流。",
+      "next": "下载边界文件后独立预览，规则以原文为准。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK07",
+    "name": "避风塘与设施",
+    "provider": "海事处 / 测量处",
+    "category": "spatial",
+    "description": "避风塘位置；官方平面图/设施资料；准静态设施信息",
+    "use": "浏览避风塘和相关岸边设施位置。",
+    "access": "CSDI空间目录与海事处网页",
+    "accessLabel": "文件 / 空间服务",
+    "formats": [
+      "空间数据目录"
+    ],
+    "limits": "不提供实时泊位余量或到访许可；不是自动确认可驶入/停靠",
+    "urls": [
+      "https://data.gov.hk/en-data/dataset/hk-md-hydro-typhoon-shelters",
+      "https://www.mardep.gov.hk/en/public-services/port-services/lpf-tshelter/index.html"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "download",
+      "label": "下载或图层端点待接入",
+      "reason": "有静态位置资料；不能当作实时泊位或避风接纳能力。",
+      "next": "取得空间文件后预览设施及属性，不估算泊位余量。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK08",
+    "name": "海岸公园与保护区",
+    "provider": "渔农自然护理署",
+    "category": "spatial",
+    "description": "Marine Parks and Marine Reserve 边界；保护区域空间信息；按修订更新",
+    "use": "了解试验水域涉及的保护区域。",
+    "access": "DATA.GOV.HK / CSDI目录",
+    "accessLabel": "文件 / 空间服务",
+    "formats": [
+      "空间数据目录"
+    ],
+    "limits": "海岸公园不一律等于禁止航行；各区适用限制需核验",
+    "urls": [
+      "https://data.gov.hk/en-data/dataset/hk-afcd-afcdlist-marineparksreserve"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "download",
+      "label": "下载或图层端点待接入",
+      "reason": "保护区边界是静态资料，各区管理要求不能统一简化。",
+      "next": "获取边界文件；同时链接每区正式说明。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK09",
+    "name": "灯标、浮标与助航设施",
+    "provider": "海事处 / 测量处",
+    "category": "spatial",
+    "description": "浮标、灯标等助航设施的官方介绍/参考；设施参考信息",
+    "use": "了解航行环境中的助航设施。",
+    "access": "海事处网页；完整图层需追踪MSDI或授权ENC",
+    "accessLabel": "网页入口",
+    "formats": [
+      "网页"
+    ],
+    "limits": "概览网页不是完整可用的实时助航设施API；位置/状态需用适合来源",
+    "urls": [
+      "https://www.mardep.gov.hk/en/public-services/port-services/atn/index.html"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "web",
+      "label": "原站网页 / 文档",
+      "reason": "助航设施介绍入口；未确认覆盖全部设备的原始位置/故障实时 API。",
+      "next": "保留官方网页，另行申请或核验适合的设备数据。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK10",
+    "name": "TSPS 香港潮流预测",
+    "provider": "海事处 / 测量处",
+    "category": "environment",
+    "description": "潮流速度、流向；水深平均/表层两种模式；约1200点；预测间隔15分钟；表层指顶部5%水层",
+    "use": "查看不同位置、时刻的潮流预测。",
+    "access": "官方批量下载；≤5点可下载≤12个月；全部点每次≤1个月",
+    "accessLabel": "公开文件",
+    "formats": [
+      "数据文件",
+      "网页"
+    ],
+    "limits": "天文潮流预测而非实测总海流；官方注明不可用于航海；不是逐秒局部浪流真值",
+    "urls": [
+      "https://current.hydro.gov.hk/main/about.php?lang=en",
+      "https://current.hydro.gov.hk/en/download.php"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "2026-09-13 已核对来源页面；未测试持续数据服务。",
+    "integration": {
+      "mode": "download",
+      "label": "下载或图层端点待接入",
+      "reason": "官方预测网页与下载表单；未验证无需会话的稳定原始 API。",
+      "next": "在原站选择点位和日期下载；做独立潮流预测回放，不标实测。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK11",
+    "name": "风向、风速与阵风",
+    "provider": "香港天文台 HKO",
+    "category": "environment",
+    "description": "平均风向/风速、最大阵风；站点观测；每10分钟更新",
+    "use": "记录视觉与航行试验的风况背景。",
+    "access": "官方开放数据CSV/相关空间资源",
+    "accessLabel": "公开文件",
+    "formats": [
+      "CSV",
+      "数据目录"
+    ],
+    "limits": "陆地/岸边站风不能直接当作航迹处海面风；核验方向编码与km/h单位",
+    "urls": [
+      "https://data.gov.hk/en-data/dataset/hk-hko-rss-latest-ten-minute-wind-info"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "2026-09-13 已核对来源页面；未测试持续数据服务。",
+    "integration": {
+      "mode": "live",
+      "label": "已配置最新数据查询",
+      "reason": "已有正式数据入口，已实现解析、刷新和失败状态；外部联网仍需在用户环境验收。",
+      "next": "推荐用附带本地服务访问，避免浏览器跨域限制；保持来源时间和原始单位。",
+      "feeds": [
+        "wind"
+      ]
+    }
+  },
+  {
+    "id": "HK12",
+    "name": "能见度观测",
+    "provider": "香港天文台 HKO",
+    "category": "environment",
+    "description": "各指定测站平均能见度；站点观测；每10分钟更新；临时资料",
+    "use": "描述视觉感知试验的环境条件。",
+    "access": "DATA.GOV.HK官方开放数据资源",
+    "accessLabel": "公开文件",
+    "formats": [
+      "CSV",
+      "数据目录"
+    ],
+    "limits": "有限站点不代表全水域；低能见度不应只靠远处测站判定",
+    "urls": [
+      "https://data.gov.hk/en-data/dataset/hk-hko-rss-regional-weather-latest-10-min-mean-visibility"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "live",
+      "label": "已配置最新数据查询",
+      "reason": "已有正式数据入口，已实现解析、刷新和失败状态；外部联网仍需在用户环境验收。",
+      "next": "推荐用附带本地服务访问，避免浏览器跨域限制；保持来源时间和原始单位。",
+      "feeds": [
+        "visibility"
+      ]
+    }
+  },
+  {
+    "id": "HK13",
+    "name": "实测潮位",
+    "provider": "香港天文台 HKO",
+    "category": "environment",
+    "description": "潮位站水位；站点观测；目录更新周期每5分钟",
+    "use": "查看测站水位及其随时间的变化。",
+    "access": "官方CSV；ALL_en.csv",
+    "accessLabel": "公开文件",
+    "formats": [
+      "CSV",
+      "数据目录"
+    ],
+    "limits": "必须保留垂向基准；潮位≠潮流≠波浪；不得未经基准转换直接叠加海底地形",
+    "urls": [
+      "https://data.gov.hk/en-data/dataset/hk-hko-rss-latest-tidal-info",
+      "https://data.weather.gov.hk/weatherAPI/hko_data/tide/ALL_en.csv"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "2026-09-13 已核对来源页面；未测试持续数据服务。",
+    "integration": {
+      "mode": "live",
+      "label": "已配置最新数据查询",
+      "reason": "已有正式数据入口，已实现解析、刷新和失败状态；外部联网仍需在用户环境验收。",
+      "next": "推荐用附带本地服务访问，避免浏览器跨域限制；保持来源时间和原始单位。",
+      "feeds": [
+        "tide"
+      ]
+    }
+  },
+  {
+    "id": "HK14",
+    "name": "潮汐高度预测",
+    "provider": "香港天文台 HKO",
+    "category": "environment",
+    "description": "天文潮位预测；逐小时预测值；年度资料不等于每小时重新预报",
+    "use": "了解计划试验时段的天文潮汐背景。",
+    "access": "官方年度CSV/预测网页",
+    "accessLabel": "公开文件",
+    "formats": [
+      "CSV",
+      "数据目录"
+    ],
+    "limits": "不等于实测水位；不包含全部气象增水和波浪效应",
+    "urls": [
+      "https://data.gov.hk/en-data/dataset/hk-hko-rss-hourly-heights-of-tides",
+      "https://www.hko.gov.hk/en/tide/predtide.htm"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "conditional",
+      "label": "条件查询 / 待覆盖核验",
+      "reason": "已实现 HHOT 按日期查询，但当年覆盖须在实际接口中验证。",
+      "next": "保留条件查询入口；不把未来潮高预报称为实测或实时观测。",
+      "feeds": [
+        "hhot"
+      ]
+    }
+  },
+  {
+    "id": "HK15",
+    "name": "天气警告与气象开放资料",
+    "provider": "香港天文台 HKO",
+    "category": "environment",
+    "description": "天气警告、降雨及其他相关天气产品；按产品分别发布/更新",
+    "use": "查看与出航计划相关的官方天气信息。",
+    "access": "官方Open Data / API目录",
+    "accessLabel": "公开数据目录",
+    "formats": [
+      "数据目录"
+    ],
+    "limits": "预报、警告和观测必须分别保存；不能把全港警告等同航点现场量测",
+    "urls": [
+      "https://www.hko.gov.hk/en/abouthko/opendata_intro.htm"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "live",
+      "label": "已配置最新数据查询",
+      "reason": "已有正式数据入口，已实现解析、刷新和失败状态；外部联网仍需在用户环境验收。",
+      "next": "推荐用附带本地服务访问，避免浏览器跨域限制；保持来源时间和原始单位。",
+      "feeds": [
+        "rhrread",
+        "warnsum",
+        "warningInfo",
+        "swt",
+        "flw",
+        "fnd"
+      ]
+    }
+  },
+  {
+    "id": "HK16",
+    "name": "华南沿岸海域天气报告",
+    "provider": "香港天文台 HKO",
+    "category": "environment",
+    "description": "South China Coastal Waters bulletin；区域海事天气报告；每日7次及必要更新",
+    "use": "快速阅读区域海事天气概况。",
+    "access": "官方开放数据目录",
+    "accessLabel": "网页入口",
+    "formats": [
+      "网页"
+    ],
+    "limits": "属于区域文字报告，不是逐位置高频传感器数据",
+    "urls": [
+      "https://data.gov.hk/en-data/dataset/hk-hko-rss-south-china-coastal-waters-bulletin"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "live",
+      "label": "已配置最新数据查询",
+      "reason": "已有正式数据入口，已实现解析、刷新和失败状态；外部联网仍需在用户环境验收。",
+      "next": "推荐用附带本地服务访问，避免浏览器跨域限制；保持来源时间和原始单位。",
+      "feeds": [
+        "sccw"
+      ]
+    }
+  },
+  {
+    "id": "HK17",
+    "name": "渔民气象与海洋资讯",
+    "provider": "香港天文台 HKO",
+    "category": "environment",
+    "description": "波高/周期、涌浪、海流等海洋气象展示；区域数值预报及其他网页气象资讯",
+    "use": "浏览现成的海洋气象图表。",
+    "access": "公开可浏览网页；本轮未确认稳定公开原始API",
+    "accessLabel": "网页入口",
+    "formats": [
+      "网页"
+    ],
+    "limits": "不得将网页可见等同可以批量抓取或再分发；模型预报不是真值",
+    "urls": [
+      "https://www.hko.gov.hk/en/fishermen/main.htm"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "web",
+      "label": "原站网页 / 文档",
+      "reason": "聚合网页/图表入口；未核验可再发布的原始机器接口。",
+      "next": "原站查看；逐图核对来源与复用许可后再制作预览。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK18",
+    "name": "香港历史波浪观测",
+    "provider": "土木工程拓展署 CEDD",
+    "category": "environment",
+    "description": "有效波高Hmo、Hmax、Tp、Tz、平均波向与水深等；交椅洲/西博寮海峡；网页列有1994—2025年度数据",
+    "use": "为波浪仿真与实验分组找本地实测依据。",
+    "access": "官方年度数据文件与统计表；CSDI也有目录项",
+    "accessLabel": "公开文件",
+    "formats": [
+      "数据文件",
+      "网页"
+    ],
+    "limits": "不是实时全港波浪流；原文件采样间隔/缺测需下载核查；未确认有逐波相位序列",
+    "urls": [
+      "https://www.cedd.gov.hk/eng/about-us/core-business/port/wave-measurement/index.html",
+      "https://data.gov.hk/en-data/dataset/hk-cedd-csu-wave-measurement"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "2026-09-13 已核对来源页面；未测试持续数据服务。",
+    "integration": {
+      "mode": "historical",
+      "label": "历史 / 静态资料",
+      "reason": "年度历史文件；不是全港实时波浪传感器流。",
+      "next": "选取年度文件后解析站点和波浪参数，做历史图表。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK19",
+    "name": "海事处布告",
+    "provider": "海事处 / 测量处",
+    "category": "notices",
+    "description": "施工、活动、临时限制、其他航行相关通知；事件驱动；正文含生效条件和期限",
+    "use": "查找施工、活动与临时航行通知原文。",
+    "access": "官方网页/RSS及PDF原文",
+    "accessLabel": "网页入口",
+    "formats": [
+      "网页",
+      "文档"
+    ],
+    "limits": "保留原文、通告编号、开始/结束/撤销/取代关系；不得由LLM凭空补坐标",
+    "urls": [
+      "https://www.mardep.gov.hk/en/legislation/notices/md-notices/index.html"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "2026-09-13 已核对来源页面；未测试持续数据服务。",
+    "integration": {
+      "mode": "web",
+      "label": "原站网页 / 文档",
+      "reason": "已核实公开网页/PDF；原版所写 RSS 未找到可确认的具体订阅端点。",
+      "next": "显示布告原文入口；需要自动列表时先核验官方馈送，不绕过访问控制。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK20",
+    "name": "进行中的海上工程",
+    "provider": "海事处 / 测量处",
+    "category": "notices",
+    "description": "Marine Works in Progress 项目位置及布告引用；官方工程清单；含预计完成时间",
+    "use": "了解某水域附近的海上工程。",
+    "access": "官方网页及对应海事处布告",
+    "accessLabel": "网页入口",
+    "formats": [
+      "网页",
+      "文档"
+    ],
+    "limits": "预计完成日期不是确认撤销日期；图形与范围需核验原文",
+    "urls": [
+      "https://www.mardep.gov.hk/en/public-services/marine-works-in-progress/index.html"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "2026-09-13 已核对来源页面；未测试持续数据服务。",
+    "integration": {
+      "mode": "web",
+      "label": "原站网页 / 文档",
+      "reason": "工程目录及原文，未确认稳定公开机器接口。",
+      "next": "原站列表查看；人工核验范围、有效期和撤销情况。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK21",
+    "name": "航海通告与海图改正",
+    "provider": "海事处 / 测量处",
+    "category": "notices",
+    "description": "海图改正与临时航行资讯；通常双周海图改正；临时事项按发布",
+    "use": "查看航海通告和海图更新依据。",
+    "access": "测量处网页、通告文件；配合适用海图",
+    "accessLabel": "网页入口",
+    "formats": [
+      "网页",
+      "文档"
+    ],
+    "limits": "海图改正和海事处布告是相关但不同产品；不可互相完全替代",
+    "urls": [
+      "https://www.hydro.gov.hk/eng/ntm.php"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "web",
+      "label": "原站网页 / 文档",
+      "reason": "航海通告/海图改正文件，不等于连续事件 API。",
+      "next": "按期下载、索引原文；保留版次与生效信息。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK22",
+    "name": "港口船舶交通报告 · VTMS",
+    "provider": "海事处 / 测量处",
+    "category": "traffic",
+    "description": "预计抵港、离港意向、在港船舶、活动及系泊报告；报告型港口信息；各报告更新时间不同",
+    "use": "了解进出港安排，不当作实时船位。",
+    "access": "官方HTML/XML报告",
+    "accessLabel": "网页 / 报告",
+    "formats": [
+      "HTML / XML"
+    ],
+    "limits": "不是实时AIS坐标或航迹；不能用来重建全港实时船位",
+    "urls": [
+      "https://data.gov.hk/en-data/dataset/hk-md-mardep-vessel-traffic-management-system-report",
+      "https://www.mardep.gov.hk/e_files/en/pub_services/arridepa.html"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "live",
+      "label": "已配置最新数据查询",
+      "reason": "已有正式数据入口，已实现解析、刷新和失败状态；外部联网仍需在用户环境验收。",
+      "next": "推荐用附带本地服务访问，避免浏览器跨域限制；保持来源时间和原始单位。",
+      "feeds": [
+        "vtms_due",
+        "vtms_intend",
+        "vtms_entered",
+        "vtms_departed",
+        "vtms_inport",
+        "vtms_transit",
+        "location"
+      ]
+    }
+  },
+  {
+    "id": "HK23",
+    "name": "官方电子航海图 · HK ENC",
+    "provider": "海事处 / 测量处",
+    "category": "spatial",
+    "description": "授权电子海图：海底地形/水深、航海对象等；S-57海图；订阅及更新服务",
+    "use": "了解正式海图的获取与许可方式。",
+    "access": "官方购买/许可；不是默认免费开放GIS数据",
+    "accessLabel": "订阅 / 授权",
+    "formats": [
+      "ENC",
+      "许可"
+    ],
+    "limits": "平台展示、转格式、缓存与再发布权限须核实；公开网页≠海图数据开放许可",
+    "urls": [
+      "https://www.hydro.gov.hk/eng/enc.php",
+      "https://www.hydro.gov.hk/eng/ENCWeb/www/subscription.php"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "license",
+      "label": "订阅 / 授权",
+      "reason": "电子航海图有订阅/许可要求；公开门户不授予完整再发布权。",
+      "next": "研究采购或授权后，由有许可的软件读取；不内嵌未授权海图。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "HK24",
+    "name": "海水水质监测",
+    "provider": "环境保护署 EPD",
+    "category": "environment",
+    "description": "海水水质历史及近期监测数据；水质站点；按各产品发布周期",
+    "use": "作为水面环境监测任务的扩展资料。",
+    "access": "EPIC查询与DATA.GOV.HK资源",
+    "accessLabel": "公开文件",
+    "formats": [
+      "数据文件",
+      "网页"
+    ],
+    "limits": "不是导航避碰、波浪相位或船体响应数据；不应挤占首版核心工作",
+    "urls": [
+      "https://epic.epd.gov.hk/EPICRIVER/marine/?lang=en",
+      "https://data.gov.hk/en-data/dataset/hk-epd-marineteam-marine-water-quality-historical-data-en"
+    ],
+    "region": "香港",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "historical",
+      "label": "历史 / 静态资料",
+      "reason": "水质历史/定期监测，不是实时 ASV 航行状态。",
+      "next": "按站点和月份下载后预览，注明采样日期。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "INT01",
+    "name": "AISStream 船舶位置服务",
+    "provider": "AISStream",
+    "category": "traffic",
+    "description": "船舶AIS位置及静态信息等消息；全球接收网络；香港实际覆盖、延迟和完整性未测试",
+    "use": "后续测试香港 AIS 消息能否持续获取。",
+    "access": "注册API Key；后端WebSocket订阅；按经纬度边界筛选",
+    "accessLabel": "账户 / 接口",
+    "formats": [
+      "WebSocket"
+    ],
+    "limits": "不可保证全港或所有小船可见；服务数据条款另核验；开源示例不等于开放数据许可",
+    "urls": [
+      "https://aisstream.io/",
+      "https://aisstream.io/documentation"
+    ],
+    "region": "国际 / 香港周边可参考",
+    "preview": false,
+    "review": "2026-09-13 已核对来源页面；未测试持续数据服务。",
+    "integration": {
+      "mode": "account",
+      "label": "账户 / 后端配置",
+      "reason": "需 API Key，官方要求后端连接；本次没有用户密钥，香港覆盖也未实测。",
+      "next": "配置自有密钥和后端 WebSocket 后再接入；验证覆盖、延迟、授权与存储条件。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "INT02",
+    "name": "Copernicus 全球波浪",
+    "provider": "Copernicus Marine",
+    "category": "environment",
+    "description": "有效波高、周期、方向、风浪/涌浪、Stokes漂移等；GLOBAL_ANALYSISFORECAST_WAV_001_027；1/12°约8–9km；原生3小时场",
+    "use": "获取香港周边较大尺度的波浪背景。",
+    "access": "官方目录；Copernicus Marine Toolbox/数据下载",
+    "accessLabel": "账户 / 接口",
+    "formats": [
+      "数据服务"
+    ],
+    "limits": "粗网格不解析小港池、局地反射和船行波；数据访问与条款按产品核实",
+    "urls": [
+      "https://data.marine.copernicus.eu/product/GLOBAL_ANALYSISFORECAST_WAV_001_027/description"
+    ],
+    "region": "国际 / 香港周边可参考",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "account",
+      "label": "账户 / 后端配置",
+      "reason": "可程序化下载/裁切的海洋产品；不是无需处理即可嵌入的港内实时图层。",
+      "next": "确认账户与产品访问方式，用官方 Toolbox 下载香港区域子集并缓存。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "INT03",
+    "name": "Copernicus 全球海流",
+    "provider": "Copernicus Marine",
+    "category": "environment",
+    "description": "流速、海面高度、温盐等海洋状态；GLOBAL_ANALYSISFORECAST_PHY_001_024；1/12°；分变量/层次/时间分辨率",
+    "use": "获取区域海洋物理状态背景。",
+    "access": "官方目录；Python/CLI下载与空间子集",
+    "accessLabel": "账户 / 接口",
+    "formats": [
+      "数据服务"
+    ],
+    "limits": "先分清总流、潮流、残余流和Stokes漂移；不得与TSPS随意相加",
+    "urls": [
+      "https://data.marine.copernicus.eu/product/GLOBAL_ANALYSISFORECAST_PHY_001_024/description"
+    ],
+    "region": "国际 / 香港周边可参考",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "account",
+      "label": "账户 / 后端配置",
+      "reason": "模式海流产品需选择变量、层次、时段及区域；本版未部署裁切后端。",
+      "next": "核验产品访问条件后做服务端裁切与图表；保留流向约定。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "INT04",
+    "name": "Open-Meteo 海洋气象 API",
+    "provider": "Open-Meteo",
+    "category": "environment",
+    "description": "波高/周期/方向、涌浪及部分海流/海面高度字段；取决于上游模型；香港相关全球产品公里级",
+    "use": "了解简便的海洋气象 JSON 接口。",
+    "access": "JSON API；公共非商业服务有使用限制；按现行条款",
+    "accessLabel": "公开 API",
+    "formats": [
+      "JSON"
+    ],
+    "limits": "官方明确不用于近岸航行；小时输出不代表小时观测；与CMEMS可能同源而非独立证据",
+    "urls": [
+      "https://open-meteo.com/en/docs/marine-weather-api",
+      "https://open-meteo.com/en/licence"
+    ],
+    "region": "国际 / 香港周边可参考",
+    "preview": false,
+    "review": "2026-09-13 已核对来源页面；未测试持续数据服务。",
+    "integration": {
+      "mode": "live",
+      "label": "已配置最新数据查询",
+      "reason": "已有正式数据入口，已实现解析、刷新和失败状态；外部联网仍需在用户环境验收。",
+      "next": "推荐用附带本地服务访问，避免浏览器跨域限制；保持来源时间和原始单位。",
+      "feeds": [
+        "marine"
+      ]
+    }
+  },
+  {
+    "id": "INT05",
+    "name": "GEBCO 全球海底地形",
+    "provider": "GEBCO",
+    "category": "environment",
+    "description": "全球海底地形网格，供大尺度地形背景与科研资料检索；产品版本以官方页面为准。",
+    "use": "了解粗尺度海底地形数据。",
+    "access": "公开栅格下载/区域裁切工具",
+    "accessLabel": "公开文件",
+    "formats": [
+      "栅格"
+    ],
+    "limits": "官方禁止将其用于航海或海上安全用途；不能替代港内精细水深/ENC",
+    "urls": [
+      "https://www.gebco.net/data-products-gridded-bathymetry-data/gebco2026-grid"
+    ],
+    "region": "国际 / 香港周边可参考",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "historical",
+      "label": "历史 / 静态资料",
+      "reason": "静态大体量海底地形栅格，不适合伪装成实时水深。",
+      "next": "下载并裁切香港附近区域；仅做粗尺度背景，非航海水深。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "INT06",
+    "name": "ERA5 历史环境再分析",
+    "provider": "Copernicus / ECMWF",
+    "category": "environment",
+    "description": "历史风场及其他气象/海洋变量；1940年至今的全球再分析；产品/变量网格各异",
+    "use": "查询历史环境与跨季节资料。",
+    "access": "Copernicus CDS账户/条款；下载或CDS API",
+    "accessLabel": "账户 / 接口",
+    "formats": [
+      "数据服务"
+    ],
+    "limits": "再分析不是当时可用的预报；训练/评测不得通过事后资料泄漏未来信息",
+    "urls": [
+      "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download"
+    ],
+    "region": "国际 / 香港周边可参考",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "account",
+      "label": "账户 / 后端配置",
+      "reason": "历史再分析产品，下载一般需要 CDS 账户/相应 API 配置。",
+      "next": "授权后裁切历史时空范围；不能作为当时可用的预报。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "INT07",
+    "name": "国际海上避碰规则 · COLREG",
+    "provider": "国际海事组织 IMO",
+    "category": "notices",
+    "description": "国际海上避碰规则及官方说明；规则文档；须结合适用本地要求",
+    "use": "查阅规则入口；不自动生成合规结论。",
+    "access": "IMO官网；完整法规文本/版本需依法取得",
+    "accessLabel": "网页入口",
+    "formats": [
+      "网页",
+      "文档"
+    ],
+    "limits": "规则不是直接可接入的位置流；不能仅用AIS或静态多边形声称已全面合规",
+    "urls": [
+      "https://www.imo.org/en/about/conventions/pages/colreg.aspx"
+    ],
+    "region": "国际 / 香港周边可参考",
+    "preview": false,
+    "review": "沿用前轮资料清单入口；当前可用性、条款与产品内容请点击原站复核。",
+    "integration": {
+      "mode": "web",
+      "label": "原站网页 / 文档",
+      "reason": "规则说明，不是数据流；完整规范的版本、获取和使用条件另核。",
+      "next": "保留 IMO 原文入口，不自动输出“已符合避碰规则”的结论。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "GH01",
+    "name": "MapLibre GL JS",
+    "provider": "maplibre/maplibre-gl-js",
+    "category": "tools",
+    "description": "Web 地图与交互图层组件。",
+    "use": "作为后续开发的组件参考；本版未部署此项目。",
+    "access": "访问仓库，核对安装文档、许可证及运行要求。",
+    "accessLabel": "开源工具入口",
+    "formats": [
+      "GitHub"
+    ],
+    "limits": "用于后续搭建地图前端，本身不提供香港海事数据。",
+    "urls": [
+      "https://github.com/maplibre/maplibre-gl-js"
+    ],
+    "region": "开发组件",
+    "preview": false,
+    "review": "未在本版执行安装、维护状态或兼容性验收；不是已接入的数据源。",
+    "integration": {
+      "mode": "tool",
+      "label": "开源工具，非数据源",
+      "reason": "这是软件组件仓库，不会自动提供香港海事数据；本次未安装或验证部署。",
+      "next": "按后续开发任务选用；软件许可证与数据许可分别核实。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "GH02",
+    "name": "AISStream 接入示例",
+    "provider": "aisstream/aisstream",
+    "category": "tools",
+    "description": "船舶 AIS 服务的示例代码与开发入口。",
+    "use": "作为后续开发的组件参考；本版未部署此项目。",
+    "access": "访问仓库，核对安装文档、许可证及运行要求。",
+    "accessLabel": "开源工具入口",
+    "formats": [
+      "GitHub"
+    ],
+    "limits": "示例开源不代表数据无限制开放；需要另核服务条款。",
+    "urls": [
+      "https://github.com/aisstream/aisstream"
+    ],
+    "region": "开发组件",
+    "preview": false,
+    "review": "未在本版执行安装、维护状态或兼容性验收；不是已接入的数据源。",
+    "integration": {
+      "mode": "tool",
+      "label": "开源工具，非数据源",
+      "reason": "这是软件组件仓库，不会自动提供香港海事数据；本次未安装或验证部署。",
+      "next": "按后续开发任务选用；软件许可证与数据许可分别核实。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "GH03",
+    "name": "pyais",
+    "provider": "M0r13n/pyais",
+    "category": "tools",
+    "description": "Python AIS 消息解码工具。",
+    "use": "作为后续开发的组件参考；本版未部署此项目。",
+    "access": "访问仓库，核对安装文档、许可证及运行要求。",
+    "accessLabel": "开源工具入口",
+    "formats": [
+      "GitHub"
+    ],
+    "limits": "用于解析收到的 AIS 消息；不是 AIS 数据供应方。",
+    "urls": [
+      "https://github.com/M0r13n/pyais"
+    ],
+    "region": "开发组件",
+    "preview": false,
+    "review": "未在本版执行安装、维护状态或兼容性验收；不是已接入的数据源。",
+    "integration": {
+      "mode": "tool",
+      "label": "开源工具，非数据源",
+      "reason": "这是软件组件仓库，不会自动提供香港海事数据；本次未安装或验证部署。",
+      "next": "按后续开发任务选用；软件许可证与数据许可分别核实。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "GH04",
+    "name": "AIS-catcher",
+    "provider": "jvde-github/AIS-catcher",
+    "category": "tools",
+    "description": "配合无线接收设备解码 AIS 的软件。",
+    "use": "作为后续开发的组件参考；本版未部署此项目。",
+    "access": "访问仓库，核对安装文档、许可证及运行要求。",
+    "accessLabel": "开源工具入口",
+    "formats": [
+      "GitHub"
+    ],
+    "limits": "需要接收硬件、合适天线与部署条件；不能据此承诺全港覆盖。",
+    "urls": [
+      "https://github.com/jvde-github/AIS-catcher"
+    ],
+    "region": "开发组件",
+    "preview": false,
+    "review": "未在本版执行安装、维护状态或兼容性验收；不是已接入的数据源。",
+    "integration": {
+      "mode": "tool",
+      "label": "开源工具，非数据源",
+      "reason": "这是软件组件仓库，不会自动提供香港海事数据；本次未安装或验证部署。",
+      "next": "按后续开发任务选用；软件许可证与数据许可分别核实。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "GH05",
+    "name": "Signal K Server",
+    "provider": "SignalK/signalk-server",
+    "category": "tools",
+    "description": "船载仪表与遥测数据网关。",
+    "use": "作为后续开发的组件参考；本版未部署此项目。",
+    "access": "访问仓库，核对安装文档、许可证及运行要求。",
+    "accessLabel": "开源工具入口",
+    "formats": [
+      "GitHub"
+    ],
+    "limits": "用于未来汇聚本艇数据，不是香港公共海况服务。",
+    "urls": [
+      "https://github.com/SignalK/signalk-server"
+    ],
+    "region": "开发组件",
+    "preview": false,
+    "review": "未在本版执行安装、维护状态或兼容性验收；不是已接入的数据源。",
+    "integration": {
+      "mode": "tool",
+      "label": "开源工具，非数据源",
+      "reason": "这是软件组件仓库，不会自动提供香港海事数据；本次未安装或验证部署。",
+      "next": "按后续开发任务选用；软件许可证与数据许可分别核实。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "GH06",
+    "name": "OpenCPN",
+    "provider": "OpenCPN/OpenCPN",
+    "category": "tools",
+    "description": "桌面海图、航线及 AIS 功能的开源参考。",
+    "use": "作为后续开发的组件参考；本版未部署此项目。",
+    "access": "访问仓库，核对安装文档、许可证及运行要求。",
+    "accessLabel": "开源工具入口",
+    "formats": [
+      "GitHub"
+    ],
+    "limits": "不是现成 Web 平台；海图许可独立于代码许可。",
+    "urls": [
+      "https://github.com/OpenCPN/OpenCPN"
+    ],
+    "region": "开发组件",
+    "preview": false,
+    "review": "未在本版执行安装、维护状态或兼容性验收；不是已接入的数据源。",
+    "integration": {
+      "mode": "tool",
+      "label": "开源工具，非数据源",
+      "reason": "这是软件组件仓库，不会自动提供香港海事数据；本次未安装或验证部署。",
+      "next": "按后续开发任务选用；软件许可证与数据许可分别核实。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "GH07",
+    "name": "OpenSeaMap 在线海图",
+    "provider": "OpenSeaMap/online_chart",
+    "category": "tools",
+    "description": "开放海图网页项目与海事图层组织参考。",
+    "use": "作为后续开发的组件参考；本版未部署此项目。",
+    "access": "访问仓库，核对安装文档、许可证及运行要求。",
+    "accessLabel": "开源工具入口",
+    "formats": [
+      "GitHub"
+    ],
+    "limits": "香港内容完整性、维护状态及数据权限需另外检查。",
+    "urls": [
+      "https://github.com/OpenSeaMap/online_chart"
+    ],
+    "region": "开发组件",
+    "preview": false,
+    "review": "未在本版执行安装、维护状态或兼容性验收；不是已接入的数据源。",
+    "integration": {
+      "mode": "tool",
+      "label": "开源工具，非数据源",
+      "reason": "这是软件组件仓库，不会自动提供香港海事数据；本次未安装或验证部署。",
+      "next": "按后续开发任务选用；软件许可证与数据许可分别核实。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "GH08",
+    "name": "Copernicus Marine Toolbox",
+    "provider": "mercator-ocean/copernicus-marine-toolbox",
+    "category": "tools",
+    "description": "海洋产品查询、下载及区域裁切工具。",
+    "use": "作为后续开发的组件参考；本版未部署此项目。",
+    "access": "访问仓库，核对安装文档、许可证及运行要求。",
+    "accessLabel": "开源工具入口",
+    "formats": [
+      "GitHub"
+    ],
+    "limits": "用于获取产品，不是香港局部浪场仿真器。",
+    "urls": [
+      "https://github.com/mercator-ocean/copernicus-marine-toolbox"
+    ],
+    "region": "开发组件",
+    "preview": false,
+    "review": "未在本版执行安装、维护状态或兼容性验收；不是已接入的数据源。",
+    "integration": {
+      "mode": "tool",
+      "label": "开源工具，非数据源",
+      "reason": "这是软件组件仓库，不会自动提供香港海事数据；本次未安装或验证部署。",
+      "next": "按后续开发任务选用；软件许可证与数据许可分别核实。",
+      "feeds": []
+    }
+  },
+  {
+    "id": "GH09",
+    "name": "VRX 水面艇仿真",
+    "provider": "osrf/vrx",
+    "category": "tools",
+    "description": "无人水面艇任务仿真与评测环境。",
+    "use": "作为后续开发的组件参考；本版未部署此项目。",
+    "access": "访问仓库，核对安装文档、许可证及运行要求。",
+    "accessLabel": "开源工具入口",
+    "formats": [
+      "GitHub"
+    ],
+    "limits": "仿真场景不能直接称为香港真实海域数字孪生。",
+    "urls": [
+      "https://github.com/osrf/vrx"
+    ],
+    "region": "开发组件",
+    "preview": false,
+    "review": "未在本版执行安装、维护状态或兼容性验收；不是已接入的数据源。",
+    "integration": {
+      "mode": "tool",
+      "label": "开源工具，非数据源",
+      "reason": "这是软件组件仓库，不会自动提供香港海事数据；本次未安装或验证部署。",
+      "next": "按后续开发任务选用；软件许可证与数据许可分别核实。",
+      "feeds": []
+    }
+  }
+]
