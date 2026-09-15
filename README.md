@@ -1,5 +1,7 @@
 # 香港海事数据枢纽 V3 · 使用说明
 
+> **V4 已发布**：全新 Cesium 2D/3D 站点（官方航道 / 限速区 / 船舶交通回放）位于子目录 [`HK_Maritime_Hub_V4/`](HK_Maritime_Hub_V4/)。树莓派部署一条命令见 [`HK_Maritime_Hub_V4/deploy/HERMES_PI.md`](HK_Maritime_Hub_V4/deploy/HERMES_PI.md)。以下为 V3 说明。
+
 **在 V2 基础上新增 Cesium「智能地图」**：默认空白香港海域三维地球，右侧勾选图层后逐步叠加岸线影像、限速区、潮位/风/能见度站与海洋预报点。V2 的目录、最新数据连接器、SVG 限速区预览均保留；**本目录为独立 V3，不覆盖 V2 文件夹。**
 
 ## 推荐启动（Mac / Linux）

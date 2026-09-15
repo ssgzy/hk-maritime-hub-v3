@@ -1,0 +1,12 @@
+# syntax=docker/dockerfile:1
+FROM python:3.12-slim
+ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
+WORKDIR /app
+COPY pipeline/requirements.txt /app/pipeline/requirements.txt
+RUN pip install -r /app/pipeline/requirements.txt
+COPY pipeline/ /app/pipeline/
+COPY deploy/pipeline_entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+WORKDIR /app/pipeline
+VOLUME ["/data"]
+ENTRYPOINT ["/entrypoint.sh"]

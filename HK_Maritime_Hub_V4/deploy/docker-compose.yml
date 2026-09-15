@@ -1,0 +1,23 @@
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.web
+    container_name: hk-maritime-v4-web
+    restart: unless-stopped
+    # Host 8091 (8090 is taken by PocketBase on the Pi); nginx listens on 8090 inside the container
+    ports:
+      - "127.0.0.1:8091:8090"
+    volumes:
+      - ../data:/usr/share/nginx/html/data:ro
+
+  pipeline:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.pipeline
+    container_name: hk-maritime-v4-pipeline
+    restart: unless-stopped
+    env_file:
+      - ../pipeline/.env
+    volumes:
+      - ../data:/data

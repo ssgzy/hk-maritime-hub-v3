@@ -1,0 +1,25 @@
+node_modules/
+web/dist/
+web/node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+pipeline/.env
+pipeline/.env.local
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+data/ais/
+.DS_Store
+.vite/
+*.log
+.env
+.env.local
+web/.env
+web/.env.local
+# keep templates even though the repo-root .gitignore has `.env.*`
+!pipeline/.env.example
+!web/.env.example
